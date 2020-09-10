@@ -25,3 +25,19 @@ do
 	m=$(( $m + 1 ))
 done
 echo "Array : ${arr[@]}"
+temp=${#arr[@]}
+for (( i=0; i<$temp; i++ ))
+do
+	for (( j=$(( $i + 1 )); j<=$temp; j++ ))
+	do
+		if [[ ${arr[$i]} -gt ${arr[$j]} ]]
+		then
+			continue
+		else
+			temp2=${arr[$i]}
+			arr[$i]=${arr[$j]}
+			arr[$j]=$temp2
+		fi
+	done
+done
+echo "Array sorted in Descending order : ${arr[@]}"
