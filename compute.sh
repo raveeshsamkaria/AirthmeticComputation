@@ -15,7 +15,7 @@ echo "$a % $b + $c = $z"
 declare -A dict
 dict[first]=$w
 dict[second]=$x
-dict[third]=$y
+dict[third]=`awk 'BEGIN{printf("%.0f", '$y' )}'`
 dict[fourth]=$z
 echo -e "Keys : ${!dict[@]}\nValues : ${dict[@]}"
 m=0
