@@ -17,4 +17,11 @@ dict[first]=$w
 dict[second]=$x
 dict[third]=$y
 dict[fourth]=$z
-echo -e "Keys:${!dict[@]}\nValues:${dict[@]}"
+echo -e "Keys : ${!dict[@]}\nValues : ${dict[@]}"
+m=0
+for val in ${dict[@]}
+do
+	arr[$m]=$val
+	m=$(( $m + 1 ))
+done
+echo "Array : ${arr[@]}"
